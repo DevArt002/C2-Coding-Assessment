@@ -1,0 +1,341 @@
+html,
+body,
+.chart,
+.chart2 {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; }
+
+.trans-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  color: white;
+  outline: none;
+  background-color: #ff7777;
+  border-radius: 5px;
+  border-style: none;
+  height: 40px;
+  width: 120px;
+  cursor: pointer;
+  z-index: 1; }
+  .trans-btn:hover {
+    background-color: #fda8a8; }
+  .trans-btn:active {
+    background-color: #fd5252; }
+
+.chart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f323a;
+  color: white; }
+  .chart > div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 7px; }
+  .chart .summary {
+    width: 25%;
+    height: 100%; }
+    .chart .summary > h1 {
+      display: flex;
+      align-items: center; }
+    .chart .summary > .sc-item1,
+    .chart .summary .sc-item2,
+    .chart .summary .sc-item3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 25%;
+      background-color: #434752;
+      border-radius: 5px;
+      margin: 7px 0px; }
+      .chart .summary > .sc-item1 > p,
+      .chart .summary .sc-item2 > p,
+      .chart .summary .sc-item3 > p {
+        display: flex;
+        align-items: center;
+        height: 20%;
+        margin: 0;
+        margin-left: 10px; }
+      .chart .summary > .sc-item1 > div,
+      .chart .summary .sc-item2 > div,
+      .chart .summary .sc-item3 > div {
+        height: 80%; }
+    .chart .summary > .sc-item1 {
+      height: 40%; }
+    .chart .summary .pie-path {
+      stroke: #f2e934;
+      stroke-width: 0px;
+      stroke-linecap: butt;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      cursor: pointer; }
+      .chart .summary .pie-path:hover {
+        fill: #f2e934 !important;
+        stroke-width: 1px;
+        stroke-dashoffset: 0;
+        stroke-dasharray: 125; }
+  .chart .all {
+    width: 50%;
+    height: 100%; }
+    .chart .all > div {
+      background-color: #434752;
+      border-radius: 5px;
+      margin: 7px 0px; }
+    .chart .all > #filterPanel {
+      position: relative;
+      width: 100%;
+      height: 35%;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      .chart .all > #filterPanel .custom-input {
+        padding: 0;
+        width: 100%;
+        margin-bottom: 5px; }
+      .chart .all > #filterPanel .custom-select-box {
+        position: absolute;
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        bottom: 10px;
+        right: 10px;
+        width: 100%;
+        max-width: 250px;
+        padding: 0px;
+        cursor: pointer; }
+        .chart .all > #filterPanel .custom-select-box .custom-select-label {
+          min-width: 65px;
+          margin: 0; }
+      .chart .all > #filterPanel .custom-control > * {
+        cursor: pointer; }
+    .chart .all > .ac-panel {
+      width: 100%;
+      height: 65%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: baseline; }
+      .chart .all > .ac-panel > #xAxis {
+        width: 100%;
+        height: 70px; }
+      .chart .all > .ac-panel > #allChart {
+        overflow: auto;
+        width: 100%;
+        height: calc(100% - 70px); }
+        .chart .all > .ac-panel > #allChart .ac-item-label {
+          fill: white;
+          font-size: 0.8rem;
+          pointer-events: none; }
+        .chart .all > .ac-panel > #allChart .ac-item {
+          cursor: pointer; }
+          .chart .all > .ac-panel > #allChart .ac-item .ac-item-bg.odd {
+            fill: #434752; }
+          .chart .all > .ac-panel > #allChart .ac-item .ac-item-bg.even {
+            fill: #2c2f36; }
+          .chart .all > .ac-panel > #allChart .ac-item .ac-item-bg.clicked {
+            fill: #ad99fd; }
+          .chart .all > .ac-panel > #allChart .ac-item :hover {
+            fill: #bbabf9 !important; }
+          .chart .all > .ac-panel > #allChart .ac-item :active {
+            fill: #987eff !important; }
+  .chart .detail {
+    width: 25%;
+    height: 100%; }
+    .chart .detail > .dt-panel {
+      width: 100%;
+      height: 100%;
+      background-color: #434752;
+      border-radius: 5px;
+      margin: 7px 0px;
+      overflow: auto;
+      line-height: 2rem;
+      padding: 5px; }
+      .chart .detail > .dt-panel p {
+        text-align: center; }
+      .chart .detail > .dt-panel mark,
+      .chart .detail > .dt-panel q {
+        background-color: darkslategray;
+        color: orange;
+        padding: 4px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+        font-size: 0.8rem; }
+      .chart .detail > .dt-panel h2,
+      .chart .detail > .dt-panel h3 {
+        text-align: center; }
+      .chart .detail > .dt-panel h4 {
+        margin: 2px; }
+      .chart .detail > .dt-panel hr {
+        background-color: white;
+        border-style: dashed; }
+    .chart .detail > .dt-close-icon {
+      display: none; }
+    .chart .detail > .dt-close-btn {
+      display: none; }
+  .chart #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: black;
+    opacity: 0.7; }
+  .chart > #tag {
+    color: white;
+    background: #9f86ff;
+    position: fixed;
+    display: none;
+    padding: 3px 6px;
+    font-size: 11px;
+    z-index: 1;
+    border-radius: 5px; }
+
+@media screen and (orientation: portrait) {
+  .chart {
+    flex-direction: column;
+    justify-content: initial;
+    height: auto; }
+    .chart > div {
+      align-items: flex-end;
+      flex-direction: row;
+      padding: 5px 0px; }
+    .chart .summary {
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center; }
+      .chart .summary > h1 {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        justify-content: center;
+        margin: 0;
+        background-color: #2f323a;
+        z-index: 2; }
+      .chart .summary > .sc-item1,
+      .chart .summary .sc-item2,
+      .chart .summary .sc-item3 {
+        width: 97%;
+        height: 25%;
+        margin: 5px 0px; }
+        .chart .summary > .sc-item1 > p,
+        .chart .summary .sc-item2 > p,
+        .chart .summary .sc-item3 > p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0; }
+      .chart .summary > .sc-item1 {
+        height: 40%; }
+    .chart .all {
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh; }
+      .chart .all > div {
+        margin: 5px 0px; }
+      .chart .all > #filterPanel {
+        height: 40%;
+        width: 97%;
+        font-size: 12px; }
+        .chart .all > #filterPanel .custom-select-box {
+          position: absolute;
+          flex-direction: row;
+          display: flex;
+          align-items: center;
+          bottom: 10px;
+          right: 10px;
+          width: 100%;
+          max-width: 150px;
+          padding: 0px;
+          cursor: pointer; }
+          .chart .all > #filterPanel .custom-select-box .custom-select-label {
+            min-width: 45px;
+            margin: 0; }
+      .chart .all > .ac-panel {
+        height: 60%;
+        width: 97%; }
+    .chart .detail {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      display: none;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      border-style: dashed;
+      border-color: #1ca8dd;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px #1ca8dd;
+      background-color: #434752;
+      padding: 10px; }
+      .chart .detail > .dt-panel {
+        width: 100%;
+        height: 80%;
+        padding: 0;
+        margin: 0;
+        background-color: #666f79; }
+      .chart .detail > .dt-close-icon {
+        width: 100%;
+        height: 5%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer; }
+      .chart .detail > .dt-close-btn {
+        width: 30%;
+        height: 10%;
+        max-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3321b1;
+        border: none;
+        border-radius: 50px;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        outline: none; }
+        .chart .detail > .dt-close-btn:hover {
+          background-color: #5040b9; }
+        .chart .detail > .dt-close-btn:active {
+          background-color: #260fc0; } }

@@ -1,0 +1,81 @@
+<div class="chart">
+  <div class="summary">
+    <h1>C2 Assessment</h1>
+    <div class="sc-item1">
+      <p>Average Status</p>
+      <div id="sumChart1"></div>
+    </div>
+    <div class="sc-item2">
+      <p>Total Services</p>
+      <div id="sumChart2"></div>
+    </div>
+    <div class="sc-item3">
+      <p>Total Alerts</p>
+      <div id="sumChart3"></div>
+    </div>
+  </div>
+  <div class="all">
+    <div id="filterPanel">
+      <div class="custom-control custom-input">
+        <input type="email" class="form-control" id="snFt" placeholder="Service Name">
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="seFt">
+        <label class="custom-control-label" for="seFt">Service Enabled</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="jwtFt">
+        <label class="custom-control-label" for="jwtFt">JWT Auth</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="oaFt">
+        <label class="custom-control-label" for="oaFt">OAuth2</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="bgaFt">
+        <label class="custom-control-label" for="bgaFt">Block Guest Access</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="fwFt">
+        <label class="custom-control-label" for="fwFt">Firewall</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="s1Ft">
+        <label class="custom-control-label" for="s1Ft">200</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="s2Ft">
+        <label class="custom-control-label" for="s2Ft">500</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="s3Ft">
+        <label class="custom-control-label" for="s3Ft">501</label>
+      </div>
+      <div class="custom-control custom-select-box">
+        <label class="custom-select-label" for="sortBy">Sort By: </label>
+        <select class="custom-select" id="sortBy">
+          <option value="1" selected>Service Name</option>
+          <option value="2">Alerts</option>
+          <option value="3">Service Enabled</option>
+          <option value="4">JWT Auth</option>
+          <option value="5">OAuth2</option>
+          <option value="6">Block Guest Access</option>
+          <option value="7">Firewall</option>
+        </select>
+      </div>
+    </div>
+    <div class="ac-panel">
+      <div id="xAxis"></div>
+      <div id="allChart"></div>
+    </div>
+  </div>
+  <div id="overlay"></div>
+  <div class="detail">
+    <div class="dt-close-icon" id="dtCloseIcon">X</div>
+    <div class="dt-panel" id="dtPanel">
+      <p>No detail</p>
+    </div>
+    <button class="dt-close-btn" id="dtCloseBtn">Close</button>
+  </div>
+  <div id="tag"></div>
+</div>

@@ -1,0 +1,21 @@
+.trans-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    color: white;
+    outline: none;
+    background-color: rgb(255, 119, 119);
+    border-radius: 5px;
+    border-style: none;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+    z-index: 1;
+    &:hover {
+        background-color: rgb(253, 168, 168);
+    }
+    &:active {
+        background-color: rgb(253, 82, 82);
+    }
+}
